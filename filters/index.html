@@ -1,0 +1,29 @@
+	<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularJS Tutorials</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.min.css">
+  <style>
+  	body {margin: 10px;}
+  </style>
+</head>
+<body>
+<div ng-app="myApp">	
+	
+	<div ng-controller="avengersController">
+		<input type="text" ng-model="searchText">
+		<table>
+			<tr ng-repeat="actor in avengers.cast | orderBy:'name' | filter:searchText">
+				<td>{{actor.name}}</td>
+				<td>{{actor.character}}</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
